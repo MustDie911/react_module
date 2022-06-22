@@ -1,17 +1,30 @@
 import './App.css';
+import {useEffect, useState} from "react";
+import Npc from "./components/Npc";
 
 function App() {
-  return (
-    <div>
 
-      {/*Створити компонент який описує персонажа (властивості id,name,status,species,gender,image) з цього апі*/}
-      {/*https://rickandmortyapi.com/*/}
-      {/*https://rickandmortyapi.com/api/character*/}
-      {/*Створити 6 персонажів*/}
+    let  [npc, setNpc] = useState([]);
+
+    useEffect(()=>{
+        fetch('https://rickandmortyapi.com/api/character')
+            .then(value => value.json())
+            .then(value => {
+                setNpc(value.results);
+                console.log(value)
+            })
+    },[])
 
 
-    </div>
-  );
+    return (
+        <div>
+            {
+                npc.map(value => <Npc name={value.name}/>
+                )
+            }
+
+        </div>
+    );
 }
 
 export default App;
