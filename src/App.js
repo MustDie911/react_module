@@ -5,7 +5,7 @@ import User from "./components/user";
 export default function App() {
 
     let [users, setUsers] = useState([]);
-    let [user,setUser] = useState({});
+    let [user, setUser] = useState(null);
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
@@ -17,23 +17,26 @@ export default function App() {
     }, [])
 
 
-    const choseUser = (user) => {setUser(user)}
+    const choseUser = (user) => {
+        setUser(user)
+    }
 
     return (
         <div>
             {users.map(user => <User key={user.id}
-                                         user={user}
-                                         choseUser ={choseUser}
+                                     user={user}
+                                     choseUser={choseUser}
 
             />)}
 
             {
-                user && <div><h3>{user.id}.
-                    {user.username}
-                    <p>{user.email}</p>
-                    <p>{user.address.street}</p>
-                    <p>{user.website}</p>
-                </h3>
+                user && <div>
+                    <h3>{user.id}.
+                        {user.username}
+                        <p>{user.email}</p>
+                        <p>{user.address.street}</p>
+                        <p>{user.website}</p>
+                    </h3>
                 </div>
             }
 
