@@ -4,17 +4,18 @@ export default function User({user,choseUser}) {
 
     return (<div className={'user'}>
 
-        {user.id}.
-        {user.name}
+        {user.id}.   {user.name}
         {user.address.street}
 
-            <button onClick={() => {
+           <div className={'btn'}>
+               <button onClick={() => {
 
-                choseUser(user)
+                   choseUser(user)
 
-            }}>More
+               }}>More
 
-            </button>
+               </button>
+           </div>
 
     </div>)
 }
