@@ -6,6 +6,7 @@ export default function User({user,choseUser}) {
 
         {user.id}.
         {user.name}
+        {user.address.street}
 
             <button onClick={() => {
 

@@ -28,7 +28,13 @@ export default function App() {
             />)}
 
             {
-                user && <div><h3>{user.id}. {user.username} <p>{user.email}</p> <p>{user.phone}</p> {user.website}</h3> </div>
+                user && <div><h3>{user.id}.
+                    {user.username}
+                    <p>{user.email}</p>
+                    <p>{user.address.street}</p>
+                    <p>{user.website}</p>
+                </h3>
+                </div>
             }
 
         </div>
