@@ -1,25 +1,26 @@
 import './App.css';
+
 import {useEffect, useState} from "react";
-import Flight from "./Components/Flight";
+
+import {Flight} from "./components";
+
+import {Flights} from "./components";
+
 
 function App() {
 
     let [flights, setFlights] = useState([])
 
     useEffect(() => {
-        fetch('https://api.spacexdata.com/v3/launches/')
-            .then(value => value.json())
-            .then(value => {
-                setFlights(value.filter(flight => flight.launch_year !== '2020'));
-            })
+        Flights().then(value => setFlights([...value]))
     }, [])
 
 
     return (
         <div>
-            <h2>SpaseX</h2>
-            {flights.map((flight, index) => <Flight
-                key={index}
+            <h2>SpaseX missions:</h2>
+            {flights.map((flight, flight_number) => <Flight
+                key={flight_number}
                 item={flight}
             />)}
 
