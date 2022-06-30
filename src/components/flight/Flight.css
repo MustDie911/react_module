@@ -1,7 +1,0 @@
-.spaceX{
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid red;
-    margin-left: 5px;
-    margin-top: 20px;
-}
