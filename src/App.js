@@ -1,6 +1,7 @@
 import './App.css';
 
-import {Users} from './services/index'
+import {Users} from "./components/users/Users";
+
 
 function App() {
   return (
