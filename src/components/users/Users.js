@@ -17,6 +17,7 @@ const Users = () => {
                 {errors.name && errors.name.type === 'maxLength' &&<span>field is too long</span>}
 
                 <input type="text"
+
                        {...register('username',{required:true})}/>
                 {errors.username &&<span>field is empty</span>}
 
