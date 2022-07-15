@@ -1,5 +1,5 @@
-import {Submit} from "./user.form.service";
+import {addUser} from "./user.form.service";
 
 export {
-    Submit
+    addUser
 }

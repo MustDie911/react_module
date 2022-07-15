@@ -1,6 +1,6 @@
 let baseUrl = "http://jsonplaceholder.typicode.com/users";
 
-let Submit = (data)=>{
+let addUser = (data)=>{
 fetch(baseUrl, {
         method: 'POST',
         body: JSON.stringify(data),
@@ -13,4 +13,4 @@ fetch(baseUrl, {
 
 }
 
-export {Submit}
+export {addUser}
