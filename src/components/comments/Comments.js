@@ -1,5 +1,5 @@
-export default function Comments() {
-    return (
+export default function Comments(){
+    return(
         <div>
             Comments
         </div>

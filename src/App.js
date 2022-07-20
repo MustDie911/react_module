@@ -1,38 +1,29 @@
 import './App.css';
 
-import {Link,Route,Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 
-import {Home,Todos,Albums,Comments} from "./pages/index"
+import MainLayout from "./layouts/MainLayout";
+
+import {Albums, Comments, Posts, Todos} from "./components";
 
 function App() {
     return (
+
         <div>
-            <div className={'header'}>
-                <h2>Menu</h2>
-                <ul>
-                    <li><Link to={'/'}>Home</Link></li>
-                    <li><Link to={'/todos'}>Todos</Link></li>
-                    <li><Link to={'/albums'}>Albums</Link></li>
-                    <li><Link to={'/comments'}>Comments</Link></li>
-                </ul>
-            </div>
 
-            <div className={'content'}>
-                <h2>content</h2>
-
-                <Routes>
-                    <Route index element={<Home/>}/>
-
+            <Routes>
+                <Route path={'/'} element={<MainLayout/>}>
                     <Route path={'/todos'} element={<Todos/>}/>
-
                     <Route path={'/albums'} element={<Albums/>}/>
+                    <Route path={'/comments'} element={<Comments/>}>
 
-                    <Route path={'/comments'} element={<Comments/>}/>
+                        <Route path={':postId'} element={<Posts/>}/>
 
-                </Routes>
+                    </Route>
+                </Route>
+            </Routes>
 
 
-            </div>
         </div>
     );
 }

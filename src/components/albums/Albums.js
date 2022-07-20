@@ -1,5 +1,5 @@
-export default function Albums() {
-    return (
+export default function Albums(){
+    return(
         <div>
             Albums
         </div>

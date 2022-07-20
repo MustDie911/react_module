@@ -1,5 +1,5 @@
-export default function Todos() {
-    return (
+export default function Todos(){
+    return(
         <div>
             Todos
         </div>
